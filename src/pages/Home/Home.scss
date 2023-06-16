@@ -1,0 +1,19 @@
+.home{
+    width: 100%;
+    height: 90vh;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(50deg,black,white);
+
+    h2{
+        width: 100%;
+        text-align: center;
+        padding: .5rem;
+        font-size: 40px;
+        color: rgb(106, 14, 34);
+        border-top: 2px solid rgb(106, 14, 34);
+        border-bottom: 2px solid rgb(106, 14, 34);
+    }
+}

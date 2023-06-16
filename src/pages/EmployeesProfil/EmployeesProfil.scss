@@ -1,0 +1,71 @@
+.profil{
+    width: 100%;
+    height: 90vh;
+    margin-top: 80px;
+    background-color: gray;
+    padding-top: 110px;
+
+    .profil-box{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .infoEmployess{
+            margin-top: 50px;
+            width: 200px;
+            p{
+                background-color: rgb(168, 168, 168);
+                        border-radius: 7px;
+                        border-bottom : 3px solid white;
+                        border-right : 3px solid white;
+                        padding: .5rem;
+                        font-size: 20px;
+                        color: rgb(41, 41, 41);
+            }
+        }
+        .Tasks_table{
+            margin: 0px auto;
+            padding: 1rem;
+            width: 70%;
+            border: 3px solid white;
+            border-radius: 15px;
+            .Tasks_thead{
+                tr{
+                    width: 100%;
+                    th{
+                        background-color: rgb(168, 168, 168);
+                        border-radius: 7px;
+                        border-bottom : 3px solid white;
+                        border-right : 3px solid white;
+                        padding: .5rem;
+                        font-size: 20px;
+                        color: rgb(41, 41, 41);
+                    }
+                }
+            }
+            .Tasks_tbody{
+                tr{
+                    width: 100%;
+                    td{
+                        background-color: rgb(123, 123, 123);
+                        border-radius: 7px;
+                        border-bottom : 3px solid white;
+                        border-right : 3px solid white;
+                        padding: .5rem;
+                        font-size: 16px;
+                        text-align: center;
+                        color: rgb(41, 41, 41);
+                  
+                        
+                    }
+                }
+            }
+        }
+
+    }
+}

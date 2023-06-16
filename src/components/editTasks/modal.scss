@@ -1,0 +1,46 @@
+.editTasks{
+    position: absolute;
+    top:80px;
+    left:0;
+    width: 100%;
+    height: 90vh;
+    background: rgba(210, 105, 30, 0.648);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .input_boxTask{
+        width: 50%;
+        height: 50%;
+        display: grid;
+        grid-template-columns: auto;
+        gap:20px;
+        div{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            input{
+                width: 70%;
+                height: 40px;
+            }
+            label{
+                font-size: 18px;
+                padding: .5rem;
+                color: white;
+                border-bottom: 2px solid white;
+            }
+            select{
+                width: 150px;
+                padding: 10px;
+                background-color:rgba(95, 158, 160, 0.779);
+                border-radius: 7px;
+                margin-left: 35px;
+                font-size: 16px;
+                text-align: center;
+                color: rgb(41, 41, 41);
+            }
+        }
+
+    }
+
+}
