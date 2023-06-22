@@ -1,97 +1,155 @@
+.Employees {
+  width: 100%;
+  background-color: gray;
+  padding-top: 200px;
+  padding-bottom: 7.6%;
 
-.Employees{
-    width: 100%;
-    height: 90vh;
-    margin-top: 80px;
-    background-color: gray;
-    padding-top: 110px;
-    .Employees_table{
-        margin: 0px auto;
-        padding: 1rem;
-        width: 70%;
-        border: 3px solid white;
-        border-radius: 15px;
-        .Employees_thead{
-            tr{
-                width: 100%;
-                th{
-                    background-color: rgb(168, 168, 168);
-                    border-radius: 7px;
-                    border-bottom : 3px solid white;
-                    border-right : 3px solid white;
-                    padding: .5rem;
-                    font-size: 20px;
-                    color: rgb(41, 41, 41);
-                }
-            }
-        }
-        .Employees_tbody{
-            tr{
-                width: 100%;
-                td{
-                    background-color: rgb(123, 123, 123);
-                    border-radius: 7px;
-                    border-bottom : 3px solid white;
-                    border-right : 3px solid white;
-                    padding: .5rem;
-                    font-size: 16px;
-                    text-align: center;
-                    color: rgb(41, 41, 41);
-                    button{
-                        width: 50px;
-                        padding: 5px;
-                        background-color:rgba(95, 158, 160, 0.779);
-                        border-radius: 7px;
-                        margin-left: 5px;
-                        transition: all 0.5s linear;
 
-                    }
-                    button:hover{
-                        cursor: pointer;
-                        transform: scale(1.1);
-                        background-color: rgb(101, 178, 181);
-                    }
-                    a{
-                        font-size: 16px;
-                        text-align: center;
-                        color: rgb(41, 41, 41);
-                        text-decoration: none;
-                    }
-                    a:hover{
-                        transform: scale(1.3);
-                        color: white;
-                    }
-                }
-            }
-        }
-    }
-    .buttonContainer{
+  .Employees_body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border: 3px solid white;
+    border-radius: 15px;
 
-        width: 50%;
-        margin: 30px auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .Employees_row {
+      width: 300px;
+      background-color: rgb(123, 123, 123);
+      border-radius: 7px;
+      border-bottom: 3px solid white;
+      border-right: 3px solid white;
+      padding: 0.5rem;
+      font-size: 14px;
+      text-align: center;
+      color: rgb(41, 41, 41);
 
-        button{
-            width: 150px;
-            padding: 10px;
-            background-color:rgba(95, 158, 160, 0.779);
-            border-radius: 7px;
-            margin-left: 5px;
-            font-size: 16px;
-            text-align: center;
-            color: rgb(41, 41, 41);
-            text-decoration: none;
-            transition: all 0.5s linear;
+      .Employees_cell {
+        margin-bottom: 0.5rem;
 
-        }
-        button:hover{
-            cursor: pointer;
-            transform: scale(1.1);
-            background-color: rgb(101, 178, 181);
+        button {
+          width: 50px;
+          padding: 5px;
+          background-color: rgba(95, 158, 160, 0.779);
+          border-radius: 7px;
+          transition: all 0.5s linear;
+          margin-right: 10px;
         }
 
+        button:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+          background-color: rgb(101, 178, 181);
+        }
+      }
 
     }
+  }
+
+  .buttonContainer {
+    width: 70%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      width: 150px;
+      padding: 10px;
+      background-color: rgba(95, 158, 160, 0.779);
+      border-radius: 7px;
+      margin-left: 5px;
+      font-size: 16px;
+      text-align: center;
+      color: rgb(41, 41, 41);
+      text-decoration: none;
+      transition: all 0.5s linear;
+    }
+
+    button:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      background-color: rgb(101, 178, 181);
+    }
+  }
+
+  // @media (max-width: 1200px) {
+  //   .Employees {
+  //     padding-top: 80px;
+  //   }
+
+    
+
+  //   .Employees_body {
+  //     width: 90%;
+
+  //     .Employees_row {
+  //       font-size: 12px;
+
+  //       .Employees_cell {
+          
+  //         button {
+  //           width: 50px;
+  //           padding: 4px;
+  //           margin-left: 3px;
+  //         }
+  //       }
+  //     }
+  //   }
+
+  //   .buttonContainer {
+  //     width: 90%;
+
+  //     button {
+  //       width: 120px;
+  //       margin-left: 3px;
+  //     }
+  //   }
+  // }
+
+  // @media (max-width:769px) {
+  //   #Employees{
+
+  //     width: 100% !important;
+  //     height: 800px !important;
+    
+
+  //   .Employees_body {
+  //     width: 100%;
+
+  //     .Employees_row {
+  //       font-size: 12px;
+
+  //       .Employees_cell {
+  //         button {
+  //           width: 50 px;
+  //           padding: 4px;
+  //           margin-left: 3px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  // }
+
+  // @media (min-width: 320px) and (max-width: 1200px) {
+  //   .Employees_body {
+  //     width: 100%;
+
+  //     .Employees_row {
+  //       font-size: 12px;
+
+  //       .Employees_cell {
+  //         button {
+  //           width: 40px;
+  //           padding: 4px;
+  //           margin-left: 3px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }

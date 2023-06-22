@@ -1,71 +1,83 @@
-.profil{
+.profil {
     width: 100%;
     height: 90vh;
     margin-top: 80px;
     background-color: gray;
     padding-top: 110px;
-
-    .profil-box{
+  
+    .profil-box {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+  
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+      }
+  
+      .infoEmployess {
+        margin-top: 50px;
+        width: 200px;
+  
+        p {
+          background-color: rgb(168, 168, 168);
+          border-radius: 7px;
+          border-bottom: 3px solid white;
+          border-right: 3px solid white;
+          padding: 0.5rem;
+          font-size: 20px;
+          color: rgb(41, 41, 41);
+        }
+      }
+  
+      .Tasks_container {
         display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
         justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        img{
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-        }
-        .infoEmployess{
-            margin-top: 50px;
-            width: 200px;
-            p{
-                background-color: rgb(168, 168, 168);
-                        border-radius: 7px;
-                        border-bottom : 3px solid white;
-                        border-right : 3px solid white;
-                        padding: .5rem;
-                        font-size: 20px;
-                        color: rgb(41, 41, 41);
-            }
-        }
-        .Tasks_table{
-            margin: 0px auto;
-            padding: 1rem;
-            width: 70%;
-            border: 3px solid white;
-            border-radius: 15px;
-            .Tasks_thead{
-                tr{
-                    width: 100%;
-                    th{
-                        background-color: rgb(168, 168, 168);
-                        border-radius: 7px;
-                        border-bottom : 3px solid white;
-                        border-right : 3px solid white;
-                        padding: .5rem;
-                        font-size: 20px;
-                        color: rgb(41, 41, 41);
-                    }
-                }
-            }
-            .Tasks_tbody{
-                tr{
-                    width: 100%;
-                    td{
-                        background-color: rgb(123, 123, 123);
-                        border-radius: 7px;
-                        border-bottom : 3px solid white;
-                        border-right : 3px solid white;
-                        padding: .5rem;
-                        font-size: 16px;
-                        text-align: center;
-                        color: rgb(41, 41, 41);
-                  
-                        
-                    }
-                }
-            }
-        }
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.5rem;
+        border: 3px solid white;
+      margin-top:30px;
+      border-radius: 15px;
+    .Tasks_item {
+      width: 300px;
+      background-color: rgb(123, 123, 123);
+      border-radius: 7px;
+      border-bottom: 3px solid white;
+      border-right: 3px solid white;
+      padding: 0.5rem;
+      font-size: 14px;
+      text-align: center;
+      color: rgb(41, 41, 41);
 
+      .Tasks_field {
+        margin-bottom: 0.5rem;
+      }
+    }}
     }
-}
+    @media (max-width: 768px) {
+      padding-top: 50px;
+  
+      .profil-box {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+  
+        .infoEmployess {
+          margin-top: 30px;
+  
+          p {
+            font-size: 16px;
+          }
+        }
+  
+     
+      }
+    }
+  }
+  

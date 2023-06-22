@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { useNavigate } from 'react-router-dom';
 import { IEmployees, ITasks } from '../../models/model';
-import { fetchFullEmployees, fetchTasksEdit } from '../../store/action/TasksAction';
+import { fetchFullEmployees, fetchTasksEdit ,fetchTasks} from '../../store/action/TasksAction';
 import './modal.scss'
 
-export const EditTasks = ({ element }: ITasks | any) => {
+export const EditTasks = ({ element,setEditItem,page,limit,setPage }: ITasks | any) => {
 
   const { EmployeesID } = useAppSelector(state => state.Tasks)
   const dispatch = useAppDispatch()
@@ -29,7 +29,8 @@ export const EditTasks = ({ element }: ITasks | any) => {
       startDate,
       endDate
     }))
-    // navigate(0)
+    await dispatch(fetchTasks(page,limit,setPage))
+    setEditItem("")
   }
 
   return (
@@ -57,17 +58,20 @@ export const EditTasks = ({ element }: ITasks | any) => {
 
         </div>
         <div>
-        <label>employeeId</label>
+        <label>Employee</label>
         <select name="" id="" value={employeeId}  onChange={(e)=>setEmployeeId(e.target.value)}>
+        <option value="" selected disabled hidden>Choose here</option>
+              
                 {EmployeesID?.map((el:IEmployees)=>
-                    <option key={el.id} value={el.id} >{el?.id}</option>
+              
+                    <option key={el.id} value={el.id} >{el?.name} {el.surname}</option>
                 )}
             </select>
         </div>
      
 
       <button onClick={() => {EditEmployees()}}>Save</button>
-      <button onClick={() => {navigate(0)}}>Cancel</button>
+      <button onClick={() => setEditItem("")}>Cancel</button>
       </div>
     </div>
   )

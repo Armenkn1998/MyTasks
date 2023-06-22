@@ -4,7 +4,7 @@ import { fetchEmployees, fetchEmployeesAdd, fetchEmployeesEdit } from '../../sto
 import { useAppDispatch } from "../../hooks/redux";
 import { useNavigate } from 'react-router-dom';
 
-export const AddModal = () => {
+export const AddModal = ({ setAddbutton,page,limit,setPage}: any,) => {
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const [name, setName] = useState('')
@@ -21,7 +21,9 @@ export const AddModal = () => {
         }
 
         await dispatch(fetchEmployeesAdd(newEmployees))
-        navigate(0)
+        await dispatch(fetchEmployees(page,limit,setPage))
+        setAddbutton("")
+
     }
 
     return (
@@ -33,7 +35,7 @@ export const AddModal = () => {
                 <div><label>Position:</label><input type="text" value={position} onChange={(e) => setPosition(e.target.value)} /></div>
 
                 <button onClick={() => AddEmployees()}>Save To Add</button>
-                <button onClick={() => navigate(0)}>Cancel</button>
+                <button onClick={() => setAddbutton("")}>Cancel</button>
             </form>
         </div>
     )

@@ -5,7 +5,7 @@ import { IEmployees } from "../../models/model";
 
 
 
-export const fetchEmployees = (page:number,limit:number,setPage:any) => {
+export const fetchEmployees = (page:number,limit:number,setPage:(page:number)=>void) => {
     return async (dispatch: Dispatch) => {
         try {
 
@@ -43,8 +43,7 @@ export const fetchEmployeesEdit = (id:number,newEmployees:IEmployees) => {
         try {
             dispatch(fetching());
             const response=await axios.put(`https://rocky-temple-83495.herokuapp.com/employees/${id}`,newEmployees);
-            console.log(response);
-            // fetchEmployees()
+          
             
         }
         catch (error) {
@@ -59,8 +58,7 @@ export const fetchEmployeesAdd = (newEmployees:any) => {
         try {
             dispatch(fetching());
             const response=await axios.post('https://rocky-temple-83495.herokuapp.com/employees',newEmployees);
-            console.log(response);
-            // fetchEmployees()
+
             
         }
         catch (error) {

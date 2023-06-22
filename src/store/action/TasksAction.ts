@@ -11,7 +11,6 @@ export const fetchTasks = (page:number,limit:number,setPage:any) => {
 
             dispatch(fetching());
             const response = await axios.get(`https://rocky-temple-83495.herokuapp.com/tasks?_page=${page}&_limit=${limit}`);
-            console.log(response.data);
             
             if(response.data.length<=0||page <=1){
                 setPage(1)
@@ -54,12 +53,14 @@ export const fetchTasksEdit = (id:number,newTasks:ITasks) => {
 }
 export const fetchTasksAdd = (newTasks:any) => {
     return async (dispatch: Dispatch) => {
+        
         try {
-            dispatch(fetching());
-            await axios.post('https://rocky-temple-83495.herokuapp.com/tasks',newTasks);
+            // dispatch(fetching());
+         const x =   await axios.post('https://rocky-temple-83495.herokuapp.com/tasks',newTasks);
             
         }
         catch (error) {
+console.log(error);
 
             dispatch(fetchError(error as Error));
         }

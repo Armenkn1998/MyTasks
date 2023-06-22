@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { IEmployees } from '../../models/model'
-import { fetchEmployeesEdit } from '../../store/action/EmployeesAction'
+import { fetchEmployees,fetchEmployeesEdit } from '../../store/action/EmployeesAction'
 import { useAppDispatch } from "../../hooks/redux";
 import { useNavigate } from 'react-router-dom';
 import './modal.scss'
 
-export const EditModal = ({ element }: IEmployees | any) => {
+export const EditModal = ({ element ,setEditItem,page,limit,setPage}: IEmployees | any,) => {
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -21,8 +21,10 @@ export const EditModal = ({ element }: IEmployees | any) => {
       surname: surname,
       email: email,
       position: position
-    }))
-    navigate(0)
+    },))
+    await dispatch(fetchEmployees(page,limit,setPage))
+
+    setEditItem("") 
   }
 
   return (
@@ -45,7 +47,7 @@ export const EditModal = ({ element }: IEmployees | any) => {
 
         </div>
       <button onClick={() => EditEmployees()}>Save</button>
-      <button onClick={() => navigate(0)}>Cancel</button>
+      <button onClick={() => setEditItem("")}>Cancel</button>
       </form>
 
     </div>

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { fetchFullEmployees, fetchTasksAdd } from '../../store/action/TasksAction'
+import { fetchFullEmployees, fetchTasksAdd,fetchTasks } from '../../store/action/TasksAction'
 import { IEmployees } from '../../models/model'
 import './AddTasks.scss'
 
-export const AddTasks = () => {
+export const AddTasks = ({setAddbutton,page,limit,setPage}:any) => {
     const { EmployeesID } = useAppSelector(state => state.Tasks)
 
     const dispatch = useAppDispatch()
@@ -22,7 +22,8 @@ export const AddTasks = () => {
         dispatch(fetchFullEmployees())
     }, [dispatch])
 
-    async function AddEmployees() {
+    async function AddEmployees(e:any) {
+        e.preventDefault()
         const newTasks: any = {
             name,
             employeeId,
@@ -31,7 +32,9 @@ export const AddTasks = () => {
             endDate
         }
         await dispatch(fetchTasksAdd(newTasks))
-        // navigate(0)
+        await dispatch(fetchTasks(page,limit,setPage))
+        setAddbutton("")
+
     }
 
     return (
@@ -54,18 +57,19 @@ export const AddTasks = () => {
 
                 </div>
                 <div>
-                    <label>EmployeesID:</label> <select name="" id="" onChange={(e) => setEmployeeId(e.target.value)}>
+                    <label>Employees:</label> <select name="" id="" onChange={(e) => setEmployeeId(e.target.value)}>
 
-
+                 <option value="" selected disabled hidden>Choose here</option>
+              
                         {EmployeesID?.map((el: IEmployees) =>
-                            <option key={el.id} value={el.id} >{el?.id}</option>
+                            <option key={el.id} value={el.id} >{el?.name } {el?.surname}</option>
                         )}
                     </select>
                     </div>
 
 
-                    <button onClick={() => { AddEmployees() }}>Save To Add</button>
-            <button onClick={() => navigate(0)}>Cancel</button>
+                    <button onClick={(e) => { AddEmployees(e) }}>Save To Add</button>
+            <button onClick={() => setAddbutton("")}>Cancel</button>
             </form>
         </div>
     )
